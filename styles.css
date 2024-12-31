@@ -1,0 +1,815 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Logo Styling */
+.logo {
+    height: 50px;
+    width: auto;
+    border-radius: 5px;
+}
+
+/* Company Name Styling */
+.company-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-left: 15px;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 15px 20px;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #34495e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 15px;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: 80px;
+    padding: 60px 20px;
+    background-color: #f4f4f9;
+    color: #34495e;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero-heading {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.cta-buttons .btn-secondary {
+    background-color: #333;
+    color: white;
+}
+
+.cta-buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Image Slider */
+.image-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.slider-images {
+    display: flex;
+    animation: slide 20s linear infinite;
+}
+
+.slider-images img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .cta-buttons a {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-heading {
+        font-size: 28px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons a {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .logo {
+        height: 40px;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #fdfdfd;
+}
+
+.navbar.dark-mode {
+    background-color: #2c3e50;
+}
+
+.nav-link.dark-mode {
+    color: #f0f0f0;
+}
+
+.cta-buttons .btn-primary, .cta-buttons .btn-secondary {
+    background-color: #333;
+}
+
+body.dark-mode .hero-section {
+    background-color: #121212;
+    color: #fdfdfd;
+}
+
+body.dark-mode .hero-heading {
+    color: #f0f0f0;
+}
+
+body.dark-mode .hero-description {
+    color: #ddd;
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.label {
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.label .ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.label .sun, .label .moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.label .sun {
+    left: 5px;
+    opacity: 0;
+}
+
+.label .moon {
+    right: 5px;
+    opacity: 1;
+    color: #3498db;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(25px);
+}
+
+.checkbox:checked + .label .sun {
+    opacity: 1;
+}
+
+.checkbox:checked + .label .moon {
+    opacity: 0;
+}
+
+
+
+
+/* Full-width slider container */s
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    background-color:#dedede;
+    padding: 5vw;
+    border: solid black 1px;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .slide {
+    width: 350px; /* Fixed width for images */
+    height: 400px; /* Fixed height for images */
+    margin: 0 15px; /* Space between images */
+    object-fit: cover; /* Ensure images cover the container area */
+    border-radius: 5px;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+  
+  .slide:hover {
+    transform: scale(1.1); /* Zoom in effect on hover */
+  }
+  
+  .slider:hover {
+    animation-play-state: paused; /* Pause the sliding on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .slide {
+      width: 80%; /* Make images smaller on mobile */
+      height: 150px;
+    }
+  }
+  
+  /* Optional: Add space between images */
+  @keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+
+ /* General Styles */
+.features1-container2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split the screen into two equal parts */
+    grid-gap: 2rem;
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  .features1-image-container {
+    height: 100vh; /* Make the image container take up the full height of the viewport */
+    /*width: 50%; /* Make the image container cover the left half of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .features1-image1,
+  .features1-image2,
+  .features1-image3 {
+    width: 100%; /* Make the image fill the container */
+    height: 100vh;
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .features1-image1:hover,
+  .features1-image2:hover,
+  .features1-image3:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    opacity: 0.9; /* Slight opacity change on hover */
+  }
+  
+  .features1-tabs-menu {
+    gap: 1rem; /* Reduced gap for mobile responsiveness */
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .features1-tab-horizontal1,
+  .features1-tab-horizontal2,
+  .features1-tab-horizontal3 {
+    gap: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    border-left: 5px solid transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .features1-tab-horizontal1:hover,
+  .features1-tab-horizontal2:hover,
+  .features1-tab-horizontal3:hover {
+    background-color: #f5f5f5; /* Subtle background on hover */
+    border-color: #007BFF; /* Highlight tab border on hover */
+  }
+  
+  .features1-tab-horizontal1.active,
+  .features1-tab-horizontal2.active,
+  .features1-tab-horizontal3.active {
+    
+    border-color: #0056b3; /* Active state color */
+  }
+  
+  .features1-divider-container1,
+  .features1-divider-container2,
+  .features1-divider-container3 {
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+  }
+  
+  .features1-container3,
+  .features1-container4,
+  .features1-container5 {
+    width: 2px;
+    align-self: stretch;
+    background-color: #007BFF;
+  }
+  
+  .features1-content1,
+  .features1-content2,
+  .features1-content3 {
+    gap: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .features1-content1 h2,
+  .features1-content2 h2,
+  .features1-content3 h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .features1-content1 span,
+  .features1-content2 span,
+  .features1-content3 span {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  @media(max-width: 991px) {
+    .features1-container2 {
+      grid-template-columns: 1fr; /* Stack content vertically on smaller screens */
+      grid-gap: 1.5rem; /* Smaller gap for mobile */
+    }
+  
+    .features1-image-container {
+      width: 100%; /* Make image take full width on mobile */
+      height: auto; /* Auto height adjustment */
+    }
+  
+    .features1-image1,
+    .features1-image2,
+    .features1-image3 {
+      width: 100%; /* Image fills the container on mobile */
+      height: 200px; /* Fixed height for images on smaller screens */
+      border-radius: 5px;
+      object-fit: cover;
+    }
+  
+    .features1-tab-horizontal1,
+    .features1-tab-horizontal2,
+    .features1-tab-horizontal3 {
+      padding: 1rem 0.5rem; /* More compact tabs */
+    }
+  
+    .features1-tabs-menu {
+      gap: 0.5rem; /* Reduced gap on smaller screens */
+    }
+  
+    .features1-content1 h2,
+    .features1-content2 h2,
+    .features1-content3 h2 {
+      font-size: 1.3rem; /* Slightly smaller heading on mobile */
+    }
+  
+    .features1-content1 span,
+    .features1-content2 span,
+    .features1-content3 span {
+      font-size: 0.9rem; /* Smaller text for readability */
+    }
+  }
+  
+  /* Additional styling for creative effect */
+  .features1-container2 {
+    background: linear-gradient(to right, #f0f4f8, #e1e9f3); /* Gradient background for more visual appeal */
+    padding: 3rem;
+    border-radius: 5px;
+  }
+  
+  .features1-tabs-menu {
+    background-color: #ffffff; /* White background for tabs */
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .features1-tabs-menu:hover {
+    background-color: #f9f9f9; /* Subtle change on hover */
+  }
+  
+  .hero-header78 {
+    gap: 3rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+  
+  .hero-content2 {
+    gap: 1.5rem;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .hero-row-container1 {
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+  }
+  
+  .left-to-right .thq-animated-group-horizontal,
+  .right-to-left .thq-animated-group-horizontal {
+    display: flex;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .left-to-right .thq-animated-group-horizontal {
+    animation: leftToRight 10s linear infinite;
+  }
+  
+  .right-to-left .thq-animated-group-horizontal {
+    animation: rightToLeft 10s linear infinite;
+  }
+  
+  @keyframes leftToRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes rightToLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .hero-placeholder-image {
+    width: 300px;  /* Image width reduced to 300px */
+    height: 250px; /* Image height reduced to 250px */
+    object-fit: cover;
+    margin-right: 10px; /* Spacing between images */
+    transition: transform 0.3s;
+  }
+
+  
+  /* Define CSS Variables for a professional blue color scheme */
+:root {
+    --dl-space-space-oneandhalfunits: 1.5rem;
+    --dl-space-space-threeunits: 3rem;
+    --dl-space-space-fourunits: 4rem;
+    --dl-space-space-sixunits: 6rem;
+    --dl-radius-radius-cardradius: 8px;
+    --dl-color-theme-accent2: #007bff; /* Professional blue */
+    --dl-color-theme-accent1: #0056b3; /* Darker blue for accent */
+    --dl-color-theme-neutral-light: #f8f9fa;
+    --dl-color-theme-neutral-dark: #343a40;
+    --dl-color-theme-button-background: #0069d9; /* Stylish button blue */
+    --dl-color-theme-button-hover: #0056b3; /* Darker blue on hover */
+    --dl-color-theme-button-text: #ffffff; /* White text for the button */
+  }
+  
+  /* Base styles */
+  .thq-section-padding {
+    padding: 2rem;
+  }
+  
+  .thq-section-max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .cta-accent2-bg {
+    gap: var(--dl-space-space-oneandhalfunits);
+    display: flex;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(1deg) skew(0deg, 0deg);
+    align-self: stretch;
+    transition: 0.3s;
+    align-items: center;
+    border-radius: var(--dl-radius-radius-cardradius);
+    justify-content: space-between;
+    transform-style: preserve-3d;
+    background-color: var(--dl-color-theme-accent2);
+  }
+  
+  .cta-accent2-bg:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  
+  .cta-accent1-bg {
+    width: 100%;
+    display: flex;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-2deg) skew(0deg, 0deg);
+    align-items: center;
+    border-radius: var(--dl-radius-radius-cardradius);
+    justify-content: space-between;
+    transform-style: preserve-3d;
+    background-color: var(--dl-color-theme-accent1);
+  }
+  
+  .cta-container2 {
+    gap: var(--dl-space-space-threeunits);
+    width: 100%;
+    display: flex;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(1deg) skew(0deg, 0deg);
+    transition: 0.3s;
+    align-items: center;
+    padding-top: var(--dl-space-space-sixunits);
+    padding-left: var(--dl-space-space-fourunits);
+    border-radius: var(--dl-radius-radius-cardradius);
+    padding-right: var(--dl-space-space-fourunits);
+    padding-bottom: var(--dl-space-space-sixunits);
+  }
+  
+  .cta-container2:hover {
+    color: var(--dl-color-theme-neutral-light);
+    background-color: var(--dl-color-theme-neutral-dark);
+  }
+  
+  .cta-content {
+    gap: var(--dl-space-space-oneandhalfunits);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .cta-actions {
+    gap: var(--dl-space-space-oneandhalfunits);
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  
+  /* Stylish button styles */
+  .cta-button {
+    background-color: var(--dl-color-theme-button-background);
+    color: var(--dl-color-theme-button-text);
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-button:hover {
+    background-color: var(--dl-color-theme-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Mobile responsiveness */
+  @media(max-width: 767px) {
+    .cta-container2 {
+      gap: var(--dl-space-space-oneandhalfunits);
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+  
+  @media(max-width: 479px) {
+    .cta-actions {
+      flex-wrap: wrap;
+      align-self: stretch;
+      justify-content: center;
+    }
+    .cta-button {
+      flex: 1;
+    }
+  }
+
+
+  /* Feature 2 Styles */
+
+/* General Container for Feature 2 */
+.features2-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-gap: 20px;
+    margin-top: 40px;
+    padding: 2rem;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+}
+
+/* Image Container for Feature 2 */
+.features2-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 250px; /* Fixed height */
+}
+
+/* Ensure all images in Feature 2 have same size */
+.features2-image-container img {
+    width: 100%; /* Make images fill the container */
+    height: 100%; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Add subtle shadow */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effect on images */
+.features2-image-container img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    opacity: 0.9; /* Slight opacity change */
+}
+
+/* Tab Menu for Feature 2 */
+.features2-tabs-menu {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab Menu Item Styling */
+.features2-tab-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-left: 5px solid transparent;
+}
+
+.features2-tab-item:hover {
+    background-color: #e1e9f3;
+    color: #007bff;
+    border-left: 5px solid #007bff;
+}
+
+/* Active Tab State */
+.features2-tab-item.active {
+    background-color: #f4f4f9;
+    color: #0056b3;
+    border-left: 5px solid #0056b3;
+}
+
+/* Tab Content for Feature 2 */
+.features2-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Title for Feature 2 Content */
+.features2-content h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Text Description for Feature 2 */
+.features2-content span {
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments for Feature 2 */
+@media (max-width: 768px) {
+    .features2-container {
+        grid-template-columns: 1fr; /* Stack content vertically */
+        padding: 1rem;
+    }
+
+    .features2-image-container img {
+        height: 150px; /* Smaller images on mobile */
+    }
+
+    .features2-tabs-menu {
+        padding: 1rem;
+    }
+
+    .features2-tab-item {
+        padding: 0.8rem;
+    }
+    
+    .features2-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .features2-content span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Optional: Add background color on hover for the tabs */
+.features2-tabs-menu:hover {
+    background-color: #f9f9f9;
+}
+
